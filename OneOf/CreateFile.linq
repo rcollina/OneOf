@@ -2,25 +2,29 @@
 
 void Main()
 {
-    var output = GetContent(true).Dump();
+    var output = GetContent(maxCount: 33, isStruct: true, asyncEnabled: true).Dump();
     var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
     File.WriteAllText(outpath.Dump(), output);
 
-    var output2 = GetContent(false);
+    var output2 = GetContent(maxCount: 33, isStruct: false, asyncEnabled: true);
     var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
     File.WriteAllText(outpath2.Dump(), output2);
 
 }
 
-public string GetContent(bool isStruct)
+public string GetContent(int maxCount, bool isStruct, bool asyncEnabled)
 {
+	maxCount = Math.Max(1, maxCount);
 	var className = isStruct ? "OneOf" : "OneOfBase";
-	var sb = new StringBuilder();
-	sb.Append(@"using System;
-
+	var sb = new StringBuilder().AppendLine("using System;");
+	if (asyncEnabled)
+	{
+		sb.AppendLine(@"using System.Threading.Tasks;");
+	}
+	sb.Append(@"
 namespace OneOf
 {");
-	for (var i = 1; i < 33; i++)
+	for (var i = 1; i < maxCount; i++)
 	{
 		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 
@@ -142,6 +146,41 @@ namespace OneOf
 
 		sb.AppendLine(@"            throw new InvalidOperationException();
         }");
+		
+		if(asyncEnabled)
+		{
+			var switchAsyncArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, Task> f{e}"));
+			sb.AppendLine($@"
+        public Task SwitchAsync({switchAsyncArgList})
+        {{");
+
+			for (var j = 0; j < i; j++)
+			{
+				sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+            {{
+                return f{j}(_value{j});
+            }}");
+			}
+
+			sb.AppendLine(@"            throw new InvalidOperationException();
+        }");
+
+			var matchAsyncArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, Task<TResult>> f{e}"));
+			sb.AppendLine($@"
+        public Task<TResult> MatchAsync<TResult>({matchAsyncArgList})
+        {{");
+
+			for (var j = 0; j < i; j++)
+			{
+				sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+            {{
+                return f{j}(_value{j});
+            }}");
+			}
+
+			sb.AppendLine(@"            throw new InvalidOperationException();
+        }");
+		}
 
 		if (isStruct)
 		{

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace OneOf
 {
@@ -65,6 +66,24 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0)
         {
             if (_index == 0 && f0 != null)
             {
@@ -213,6 +232,32 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1)
         {
             if (_index == 0 && f0 != null)
             {
@@ -415,6 +460,40 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2)
         {
             if (_index == 0 && f0 != null)
             {
@@ -670,6 +749,48 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3)
         {
             if (_index == 0 && f0 != null)
             {
@@ -974,6 +1095,56 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4)
         {
             if (_index == 0 && f0 != null)
             {
@@ -1327,6 +1498,64 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5)
         {
             if (_index == 0 && f0 != null)
             {
@@ -1729,6 +1958,72 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6)
         {
             if (_index == 0 && f0 != null)
             {
@@ -2180,6 +2475,80 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7)
         {
             if (_index == 0 && f0 != null)
             {
@@ -2680,6 +3049,88 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8)
         {
             if (_index == 0 && f0 != null)
             {
@@ -3229,6 +3680,96 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9)
         {
             if (_index == 0 && f0 != null)
             {
@@ -3827,6 +4368,104 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10)
         {
             if (_index == 0 && f0 != null)
             {
@@ -4474,6 +5113,112 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11)
         {
             if (_index == 0 && f0 != null)
             {
@@ -5226,6 +5971,120 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -5915,6 +6774,128 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13)
         {
             if (_index == 0 && f0 != null)
             {
@@ -6773,6 +7754,136 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -7552,6 +8663,144 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15)
         {
             if (_index == 0 && f0 != null)
             {
@@ -8516,6 +9765,152 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -9385,6 +10780,160 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17)
         {
             if (_index == 0 && f0 != null)
             {
@@ -10455,6 +12004,168 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -11414,6 +13125,176 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19)
         {
             if (_index == 0 && f0 != null)
             {
@@ -12590,6 +14471,184 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -13639,6 +15698,192 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21)
         {
             if (_index == 0 && f0 != null)
             {
@@ -14921,6 +17166,200 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -16060,6 +18499,208 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23)
         {
             if (_index == 0 && f0 != null)
             {
@@ -17448,6 +20089,216 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -18677,6 +21528,224 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25)
         {
             if (_index == 0 && f0 != null)
             {
@@ -20171,6 +23240,232 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -21490,6 +24785,240 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26, Func<T27, TResult> f27)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26, Func<T27, Task> f27)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26, Func<T27, Task<TResult>> f27)
         {
             if (_index == 0 && f0 != null)
             {
@@ -23090,6 +26619,248 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26, Func<T27, Task> f27, Func<T28, Task> f28)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26, Func<T27, Task<TResult>> f27, Func<T28, Task<TResult>> f28)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -24499,6 +28270,256 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26, Func<T27, TResult> f27, Func<T28, TResult> f28, Func<T29, TResult> f29)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26, Func<T27, Task> f27, Func<T28, Task> f28, Func<T29, Task> f29)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26, Func<T27, Task<TResult>> f27, Func<T28, Task<TResult>> f28, Func<T29, Task<TResult>> f29)
         {
             if (_index == 0 && f0 != null)
             {
@@ -26205,6 +30226,264 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26, Func<T27, Task> f27, Func<T28, Task> f28, Func<T29, Task> f29, Func<T30, Task> f30)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            if (_index == 30 && f30 != null)
+            {
+                return f30(_value30);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26, Func<T27, Task<TResult>> f27, Func<T28, Task<TResult>> f28, Func<T29, Task<TResult>> f29, Func<T30, Task<TResult>> f30)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            if (_index == 30 && f30 != null)
+            {
+                return f30(_value30);
+            }
+            throw new InvalidOperationException();
+        }
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -27704,6 +31983,272 @@ namespace OneOf
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26, Func<T27, TResult> f27, Func<T28, TResult> f28, Func<T29, TResult> f29, Func<T30, TResult> f30, Func<T31, TResult> f31)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            if (_index == 30 && f30 != null)
+            {
+                return f30(_value30);
+            }
+            if (_index == 31 && f31 != null)
+            {
+                return f31(_value31);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26, Func<T27, Task> f27, Func<T28, Task> f28, Func<T29, Task> f29, Func<T30, Task> f30, Func<T31, Task> f31)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return f27(_value27);
+            }
+            if (_index == 28 && f28 != null)
+            {
+                return f28(_value28);
+            }
+            if (_index == 29 && f29 != null)
+            {
+                return f29(_value29);
+            }
+            if (_index == 30 && f30 != null)
+            {
+                return f30(_value30);
+            }
+            if (_index == 31 && f31 != null)
+            {
+                return f31(_value31);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15, Func<T16, Task<TResult>> f16, Func<T17, Task<TResult>> f17, Func<T18, Task<TResult>> f18, Func<T19, Task<TResult>> f19, Func<T20, Task<TResult>> f20, Func<T21, Task<TResult>> f21, Func<T22, Task<TResult>> f22, Func<T23, Task<TResult>> f23, Func<T24, Task<TResult>> f24, Func<T25, Task<TResult>> f25, Func<T26, Task<TResult>> f26, Func<T27, Task<TResult>> f27, Func<T28, Task<TResult>> f28, Func<T29, Task<TResult>> f29, Func<T30, Task<TResult>> f30, Func<T31, Task<TResult>> f31)
         {
             if (_index == 0 && f0 != null)
             {
